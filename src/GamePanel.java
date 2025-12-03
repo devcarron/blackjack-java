@@ -130,7 +130,6 @@ public class GamePanel extends JPanel implements ActionListener
         }
         else if (act.equals("Clear"))
         {
-            System.out.println("clear bet");
             clearBet();
         }
         
@@ -263,7 +262,7 @@ public class GamePanel extends JPanel implements ActionListener
         }
         
         // redraw cards and totals
-        table.update(dealer.getHand(), player.getHand(), (dealer.areCardsFaceUp()) ? true : false);
+        table.update(dealer.getHand(), player.getHand(), dealer.areCardsFaceUp());
 		table.setNames(dealer.getName(), player.getName());
         table.repaint();
         

@@ -108,14 +108,7 @@ public class Player extends BlackjackPlayer implements Serializable
      */
     public boolean doubleBet()
     {
-        boolean betDoubled = false;
-        
-        if (setBet(getBet() * 2))
-        {
-            betDoubled = true;
-        }
-        
-        return betDoubled;
+        return setBet(getBet() * 2);
     }
     
     // insurance
@@ -138,25 +131,18 @@ public class Player extends BlackjackPlayer implements Serializable
      */
     public boolean betPlaced()
     {
-        return (getBet() > 0.0) ? true : false;
+        return getBet() > 0.0;
     }
     
     // wallet less than 1 in case .5 is in there from a blackjack
     public boolean isBankrupt()
     {
-        return (getWallet() < 1 && getBet() <= 0) ? true : false;
+        return getWallet() < 1 && getBet() <= 0;
     }
     
     public boolean canDouble()
     {
-        boolean answer = false;
-        
-        if (getBet() <= getWallet())
-        {
-            answer = true;
-        }
-        
-        return answer;
+        return getBet() <= getWallet();
     }
     
     /**

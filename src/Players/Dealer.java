@@ -90,7 +90,7 @@ public class Dealer extends BlackjackPlayer
             say("Please place your bet.");
         }
         
-        return (betSet) ? true : false;
+        return betSet;
     }
     
     /**
@@ -285,7 +285,7 @@ public class Dealer extends BlackjackPlayer
     
     public boolean canPlayerDouble(Player player)
     {
-        return (playerCanDouble && player.canDouble()) ? true : false;
+        return playerCanDouble && player.canDouble();
     }
     
     public DealerCardHand getHand()
